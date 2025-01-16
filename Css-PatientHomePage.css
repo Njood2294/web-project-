@@ -1,0 +1,58 @@
+
+#PatientHomePage {
+    margin:4%;
+    font-size: 1.2em;
+    color:rgb(72, 72, 72);
+    
+}
+
+#log {
+    float: right;
+    color: blue;
+    margin-top: -3em;
+    margin-right: 1em;
+    font-size: 1.2em;
+}
+
+#info {
+    display: flex;
+    border: 0.1em inset #a2c9ff;
+    padding:2.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 2em;
+    background-color: #e3eef9;
+    gap: 13em;
+    border-width: thick;
+}
+
+
+table {
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    
+}
+
+th, td {
+    border: 0.1em inset #3586f8;
+    padding: 1em;
+    text-align: center;
+    border-width: thick;
+    background-color: #e3eef9;
+    
+}
+
+th{
+    height: 2em;
+}
+td{
+    height: 6em;
+}
+ #Book
+ {
+    float: right;
+    color: blue;
+    
+ }
+ 
