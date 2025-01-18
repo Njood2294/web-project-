@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div id="load" class="loaded">
+        <div class="loaded-content">
+            <h2>Are you a Patient or a Doctor?</h2>
+            <button onclick="Select('patient')">Patient</button>
+            <button onclick="Select('doctor')">Doctor</button>
+        </div>
+    </div>
+
+   
+
+   
+    <div id="patientForm" class="form-container">
+        <form action="/patient_homepage" method="POST">
+            <fieldset>
+                <legend>Patient Information</legend>
+        <ul>
+            <li><input type="text" name="firstName" placeholder="First Name" required></li>
+            <li><input type="text" name="lastName" placeholder="Last Name" required></li>
+            <li><input type="text" name="id" placeholder="ID" required></li>
+            <li><input type="date" name="dob" placeholder="Date of Birth" required></li>
+            <li><input type="email" name="email" placeholder="Email" required></li>
+            <li><input type="password"name="password" placeholder="Password" required></li>
+        </ul>
+        <ol>
+            <li><input type="radio" class="Gender"name="Gender" value="female">female</li>
+            <li><input type="radio" class="Gender"name="Gender" value="male">male</li>
+        </ol>
+        
+            <button type="submit" class="sign-button">Sign Up</button>
+        </fieldset>
+        </form>
+    </div>
+
+   
+   <div id="doctorForm" class="form-container">
+        <form action="/doctor_homepage" method="POST">
+            <fieldset>
+                <legend>Doctor Information</legend>
+                <ul>
+                <li><input type="text" name="firstName" placeholder="First Name" required></li>
+                <li><input type="text" name="lastName" placeholder="Last Name" required></li>
+                <li><input type="text" name="id" placeholder="ID" required></li>
+                <li><input type="email" name="email" placeholder="Email" required></li>
+                <li><input type="password" name="password" placeholder="Password" required></li>
+                <li> <input type="file" name="file"></li>
+                <li><select name="speciality" required></li>
+                    <li><option value="">Select Speciality</option></li>
+                    <li><option value="Cardiology">Cardiology</option></li>
+                    <li><option value="Neurology">Neurology</option></li>
+                    <li><option value="Pediatrics">Pediatrics</option></li>
+                    <li><option value="General Practitioner">General Practitioner</option></li>
+                </select>
+            </ul>
+                <button type="submit" class="sign-button">Sign up</button>
+            </fieldset>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

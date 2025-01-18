@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #Edf1f6;
+}
+
+h2 {
+    color: #081f5c;
+}
+
+.container {
+    display: flex;
+    width: 70%;
+    height: 60%;
+    box-shadow: 0px 4px 10px rgba(211, 210, 210, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-section {
+    flex: 1;
+    background-color: #7096D1;
+    color: #081f5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.left-section .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 150px;
+    width: auto;
+}
+
+.left-section .logo img {
+    height: 100%;
+    width: auto;
+}
+
+.left-section h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.left-section p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.right-section {
+    flex: 1.2;
+    background-color: rgba(132, 132, 132, 0.111); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.form-container1 {
+    text-align: center;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #334eac;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.login-button:hover {
+    background-color: rgba(187, 210, 248, 0.842);
+}
+
+.sign-up-text {
+    font-size: 16px;
+    color: #081f5c;
+}
+
+.sign-up-link {
+    color: #081f5c;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+h1 {
+    color: #081f5c;
+}
+
+.loaded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.loaded-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loaded-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loaded-content button:hover {
+    background-color: #ddd;
+}
+
+.form-container{
+    display: none;
+    margin-top: 20px;
+    
+}
+
+.form-container input{
+    margin: 10px 0;
+    padding: 10px;
+    width: 300px;
+}
+.form-container .Gender{
+    width:20px;
+}
+
+.sign-button{
+    display: inline-block;
+    padding: 15px 30px;
+    background-color:#334eac;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.sign-button:hover{
+    background-color: rgba(187, 210, 248, 0.842);
+}
+
+ul{
+    list-style-type: none;
+}
+
+ol {
+    list-style-type: none;
+}
+
+input[type="file"] {
+    font-family: Arial, sans-serif;
+    color: rgb(106, 99, 99);
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="file"]::-webkit-file-upload-button {
+    background-color: #ffffff;
+    color: rgb(106, 99, 99);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: rgba(187, 210, 248, 0.842);
+  }
+ 
