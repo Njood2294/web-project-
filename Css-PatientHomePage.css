@@ -1,5 +1,32 @@
-body{
-    background-color: #f7f2eb;
+
+#Appointment{
+    margin:4%;
+    font-size: 1.2em;
+    color:rgb(72, 72, 72);
+}
+#form1,#form2{
+    line-height: 3em;
+    border: 0.1em inset #a2c9ff;
+    background-color: #e3eef9;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+    font-size: large;
+    font-weight: bold;
+}
+#submit1,#submit2{
+    float: right;
+    margin-top: 1em;
+    border-radius: 5%;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #91bddf;
+    border-width: thin;
+    box-shadow:.1em .1em silver;
+    font-weight: bolder;
+
 }
 #PatientHomePage {
     margin:4%;
@@ -58,3 +85,7 @@ td{
     
  }
  
+
+body{
+    background-color: #f7f2eb;
+}
