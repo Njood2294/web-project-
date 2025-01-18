@@ -1,4 +1,6 @@
-
+body{
+    background-color: #f7f2eb;
+}
 #PatientHomePage {
     margin:4%;
     font-size: 1.2em;
