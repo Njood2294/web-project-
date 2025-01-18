@@ -13,6 +13,7 @@
     padding: 1em;
     font-size: large;
     font-weight: bold;
+    border-width: thick;
 }
 #submit1,#submit2{
     float: right;
@@ -41,6 +42,13 @@
     margin-top: -3em;
     margin-right: 1em;
     font-size: 1.2em;
+    border: 0.1em inset #a2c9ff;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #e3eef9;
+    border-width: thick;
 }
 
 #info {
@@ -76,12 +84,22 @@ th{
     height: 2em;
 }
 td{
-    height: 6em;
+    height: 5em;
 }
  #Book
  {
     float: right;
     color: blue;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #e3eef9;
+    border: 0.1em inset #a2c9ff;
+    border-width: thick;
+    
+    margin-top: 0em;
+    margin-bottom: 0.8em;
     
  }
  
