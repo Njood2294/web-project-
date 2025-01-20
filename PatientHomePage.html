@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="Css-PatientHomePage.css" id="main-theme-stylesheet"> 
 </head>
 <body>
-    <a href="" id="log">Log out</a> 
+    <a href="Homepage/HomePage.html" id="log">Log out</a> 
  <main id="PatientHomePage">
        
   <h2>Welcom<span id="Fname"></span></h2>
@@ -20,7 +20,7 @@
     <p>Email:<span id="Email"></span></p>
 </div>
 </div>        
-<a href="" id="Book">Book an appointment</a>  
+<a href="Appointment.html" id="Book">Book an appointment</a>  
 
 <table>
     <thead>
@@ -52,5 +52,44 @@
     </tbody>
 </table>
    </main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const table = document.querySelector("table tbody");
+    const rows = Array.from(table.rows);
+
+    rows.sort((a, b) => {
+        
+        const dateA = parseDateTime(a.cells[1].innerText, a.cells[0].innerText);
+        const dateB = parseDateTime(b.cells[1].innerText, b.cells[0].innerText);
+
+        return dateA - dateB; 
+    });
+
+    rows.forEach(row => table.appendChild(row)); 
+
+    function parseDateTime(dateStr, timeStr) {
+        
+        const dateParts = dateStr.split('/');
+        const day = parseInt(dateParts[0], 10);
+        const month = parseInt(dateParts[1], 10);
+        const year = parseInt(dateParts[2], 10);
+
+      //timeParts
+        const tP = timeStr.split(' ');
+        //hourParts
+        const hourMin = tP[0].split(':');
+        
+        let hours = parseInt(hourMin[0], 10);
+        let minutes = hourMin.length > 1 ? parseInt(hourMin[1], 10) : 0;
+        const modifier = tP[1];
+
+        if (modifier === "PM" && hours < 12) hours += 12;
+        if (modifier === "AM" && hours === 12) hours = 0;
+
+        return new Date(year, month - 1, day, hours, minutes);
+    }
+});
+
+</script>
 </body>
 </html>

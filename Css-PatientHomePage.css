@@ -41,17 +41,38 @@
 
 #log {
     float: right;
-    color: blue;
+    color: white;
     margin-top: -3em;
     margin-right: 1em;
-    font-size: 1.2em;
-    border: 0.1em inset #a2c9ff;
+    font-size: 1em;
+    
     padding-right: 1em;
     padding-left: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    background-color: #e3eef9;
-    border-width: thick;
+    background-color: #334eac;
+    
+    border-radius: 2em;
+    text-decoration: none;
+}
+#Book
+ {
+    float: right;
+    color: white;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 0em;
+    margin-bottom: 0.8em;
+    background-color: #334eac;
+    border-radius: 2em;
+    text-decoration: none;
+    
+ }
+#log:hover,#Book:hover{
+    background-color: #c1d5f6; 
+    transform: scale(1.05);
 }
 
 #info {
@@ -89,24 +110,9 @@ th{
 td{
     height: 5em;
 }
- #Book
- {
-    float: right;
-    color: blue;
-    padding-right: 1em;
-    padding-left: 1em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    background-color: #e3eef9;
-    border: 0.1em inset #a2c9ff;
-    border-width: thick;
-    
-    margin-top: 0em;
-    margin-bottom: 0.8em;
-    
- }
+ 
  
 
 body{
-    background-color: #f7f2eb;
+    background-color: #Edf1f6;
 }
