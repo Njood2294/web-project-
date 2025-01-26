@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <a href= #><button type="submit" class="btn">Log in</button></a>
+                        <button type="submit" class="btn" onclick="redirectUser()>Log in</button>
                     </div>
                     <div class="create-account">
                         <p>New to Hope clinec? <a href="../Homepage/sign-up.html"><u>Create Account</u></a></p>
@@ -69,6 +69,16 @@
         }
 
         setInterval(nextSlide, 2000);
+
+        function redirectUser() {
+            const role = document.getElementById("role").value;
+
+            if (role === "doctor") {
+                window.location.href = "DoctorHomePage.html";
+            } else if (role === "patient") {
+                window.location.href = "PatientHomePage.html";
+            }
+        }
     </script>
 </body>
 </html>
