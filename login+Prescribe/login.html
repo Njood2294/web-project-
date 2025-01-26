@@ -18,7 +18,7 @@
             </div>
             <div class="card-right">
                 <h1 class="title">WELCOME BACK!</h1>
-                <form action="#" method="POST">
+                <form id="loginForm">
                     <div class="input-group">
                         <label for="username">Email</label>
                         <input type="text" id="username" name="username" required>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <button type="submit" class="btn" onclick="redirectUser()>Log in</button>
+                        <button type="submit" class="btn">Log in</button>
                     </div>
                     <div class="create-account">
                         <p>New to Hope clinec? <a href="../Homepage/sign-up.html"><u>Create Account</u></a></p>
@@ -51,6 +51,7 @@
         </div>
     </div>
     <script>
+        
         const slides = document.querySelectorAll(".slide");
         let currentSlide = 0;
 
@@ -70,15 +71,20 @@
 
         setInterval(nextSlide, 2000);
 
-        function redirectUser() {
-            const role = document.getElementById("role").value;
+        
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
 
-            if (role === "doctor") {
-                window.location.href = "../DoctorHomePage.html";
-            } else if (role === "patient") {
-                window.location.href = "../PatientHomePage.html";
+            
+            const role = document.querySelector('input[name="role"]:checked').value;
+
+            
+            if (role === "patient") {
+                window.location.href = "../PatientHomePage.html"; 
+            } else if (role === "doctor") {
+                window.location.href = "../DoctorHomePage.html"; 
             }
-        }
+        });
     </script>
 </body>
 </html>
