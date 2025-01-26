@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hope clinic</title>
+<link rel="stylesheet" href="DoctorHomePage.css" id="main-theme-stylesheet"> 
+</head>
+<body>
+    <a href="Homepage/HomePage.html" id="log">Log out</a> 
+ <main id="PatientHomePage">
+       
+  <h2>Welcom Dr. Saleh </h2>
+  <div id ="info">
+    <div>
+    <p>Name: Saleh Abdullah </p>
+    <p>Id: 0987654321 </p>
+    </div>
+    <div>
+    <p>DoB: 13/9/1978 </p>
+    <p>Email: Saleh@hotmail.com</p>
+</div>
+</div>        
+
+
+
+<table>
+
+    <h2>Upcoming Appointments</h2>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Patients's Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Reason for visit </th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>23/2/2025</td>
+            <td>11 AM </td>
+            <td>Nora Saad</td>
+            <td> 15 </td>
+            <td>Female </td>
+            <td>Headache</td>
+            <td><input type="button" value = "Confirm" >  </td>
+        </tr>
+        <tr>
+            
+            <td>16/7/2025</td>
+            <td>5 PM </td>
+            <td>Majed Ahmad</td>
+            <td> 45 </td>
+            <td>Male </td>
+            <td> Back pain </td>
+            <td>Confirmed</td>
+        </tr>
+    </tbody>
+</table> 
+
+
+
+
+<br>
+<br>
+
+<br>
+<br>
+
+<table>
+    <h2>Your Patients</h2>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Medications</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Leena Naser</td>
+            <td>40</td>
+            <td>Female</td>
+            <td>Antibiotics</td>
+            <td><a href="Prescribe.html"> Prescribe </a></td>
+           
+        </tr>
+        <tr>
+            <td>Majed Saleh</td>
+            <td>35</td>
+            <td>Male</td>
+            <td>N/A</td>
+            <td><a href="Prescribe.html"> Prescribe </a></td>
+           
+        </tr>
+    </tbody>
+</table>
+
+
+   </main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const table = document.querySelector("table tbody");
+    const rows = Array.from(table.rows);
+
+    rows.sort((a, b) => {
+        
+        const dateA = parseDateTime(a.cells[1].innerText, a.cells[0].innerText);
+        const dateB = parseDateTime(b.cells[1].innerText, b.cells[0].innerText);
+
+        return dateA - dateB; 
+    });
+
+    rows.forEach(row => table.appendChild(row)); 
+
+    function parseDateTime(dateStr, timeStr) {
+        
+        const dateParts = dateStr.split('/');
+        const day = parseInt(dateParts[0], 10);
+        const month = parseInt(dateParts[1], 10);
+        const year = parseInt(dateParts[2], 10);
+
+      //timeParts
+        const tP = timeStr.split(' ');
+        //hourParts
+        const hourMin = tP[0].split(':');
+        
+        let hours = parseInt(hourMin[0], 10);
+        let minutes = hourMin.length > 1 ? parseInt(hourMin[1], 10) : 0;
+        const modifier = tP[1];
+
+        if (modifier === "PM" && hours < 12) hours += 12;
+        if (modifier === "AM" && hours === 12) hours = 0;
+
+        return new Date(year, month - 1, day, hours, minutes);
+    }
+});
+
+</script>
+</body>
+</html>
