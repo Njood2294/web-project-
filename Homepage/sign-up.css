@@ -1,0 +1,157 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #Edf1f6;
+}
+.left-section2 h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #081f5c;
+
+}
+
+.left-section2 p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #081f5c;
+
+}
+
+h2 {
+    color: #081f5c;
+}
+.loaded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.loaded-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loaded-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loaded-content button:hover {
+    background-color: #ddd;
+}
+
+.container2 {
+    display: flex;
+    width: 85%;
+    height: 80%;
+    box-shadow: 0px 4px 10px rgba(211, 210, 210, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-section2 {
+    flex: 1;
+    background-color: #7096D1;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.left-section2 h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.left-section2 p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.right-section2{
+    flex: 1.2;
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: block; 
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, .gender-options, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+
+.gender-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="radio"] {
+    margin: 0;
+    width: auto;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #334eac;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
+}
+
+.submit-button:hover {
+    background-color: rgba(187, 210, 248, 0.842);
+}
+
+ul{
+    list-style-type: none;
+}
