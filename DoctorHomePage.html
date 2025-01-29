@@ -86,7 +86,7 @@
             <td>40</td>
             <td>Female</td>
             <td>Antibiotics</td>
-            <td><a href="Prescribe.html"> Prescribe </a></td>
+            <td><a href="login+Prescribe/Prescribe.html"> Prescribe </a></td>
            
         </tr>
         <tr>
@@ -94,7 +94,7 @@
             <td>35</td>
             <td>Male</td>
             <td>N/A</td>
-            <td><a href="Prescribe.html"> Prescribe </a></td>
+            <td><a href="login+Prescribe/Prescribe.html"> Prescribe </a></td>
            
         </tr>
     </tbody>
@@ -103,32 +103,28 @@
 
    </main>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const table = document.querySelector("table tbody");
-    const rows = Array.from(table.rows);
+   document.addEventListener("DOMContentLoaded", function() {
+    const appointmentsTable = document.querySelectorAll("table")[0].querySelector("tbody"); 
+    const rows = Array.from(appointmentsTable.rows);
 
     rows.sort((a, b) => {
-        
-        const dateA = parseDateTime(a.cells[1].innerText, a.cells[0].innerText);
-        const dateB = parseDateTime(b.cells[1].innerText, b.cells[0].innerText);
+        const dateA = parseDateTime(a.cells[0].innerText, a.cells[1].innerText);
+        const dateB = parseDateTime(b.cells[0].innerText, b.cells[1].innerText);
 
-        return dateA - dateB; 
+        return dateA - dateB;
     });
 
-    rows.forEach(row => table.appendChild(row)); 
+    rows.forEach(row => appointmentsTable.appendChild(row)); 
 
     function parseDateTime(dateStr, timeStr) {
-        
         const dateParts = dateStr.split('/');
         const day = parseInt(dateParts[0], 10);
         const month = parseInt(dateParts[1], 10);
         const year = parseInt(dateParts[2], 10);
 
-      //timeParts
-        const tP = timeStr.split(' ');
-        //hourParts
+        const tP = timeStr.trim().split(' ');
         const hourMin = tP[0].split(':');
-        
+
         let hours = parseInt(hourMin[0], 10);
         let minutes = hourMin.length > 1 ? parseInt(hourMin[1], 10) : 0;
         const modifier = tP[1];
@@ -139,6 +135,19 @@
         return new Date(year, month - 1, day, hours, minutes);
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    let table = document.querySelectorAll("table")[1].querySelector("tbody"); 
+    let rows = Array.from(table.rows);
+
+    rows.sort((rowA, rowB) => {
+        let nameA = rowA.cells[0].innerText.toLowerCase();
+        let nameB = rowB.cells[0].innerText.toLowerCase();
+        return nameA.localeCompare(nameB);
+    });
+
+    rows.forEach(row => table.appendChild(row));
+});
+
 
 </script>
 </body>
