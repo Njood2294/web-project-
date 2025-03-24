@@ -1,0 +1,134 @@
+
+#Appointment{
+    margin:4%;
+    font-size: 1.2em;
+    color:rgb(72, 72, 72);
+}
+#form1,#form2{
+    line-height: 3em;
+    border: 0.1em inset #a2c9ff;
+    background-color: #e3eef9;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+    font-size: large;
+    font-weight: bold;
+    border-width: thick;
+}
+#submit1,#submit2{
+    float: right;
+    margin-top: 0.5em;
+    padding: 0.7em 1.5em;
+    background-color: #334eac; 
+    color: white;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+#submit1:hover,#submit2:hover{
+    background-color: #c1d5f6; 
+    transform: scale(1.05);
+}
+#PatientHomePage {
+    margin:4%;
+    font-size: 1.2em;
+    color:rgb(72, 72, 72);
+    
+}
+
+#log {
+    float: right;
+    color: white;
+    margin-top: -3em;
+    margin-right: 1em;
+    font-size: 1em;
+    
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #334eac;
+    
+    border-radius: 2em;
+    text-decoration: none;
+}
+#Book
+ {
+    float: right;
+    color: white;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 0em;
+    margin-bottom: 0.8em;
+    background-color: #334eac;
+    border-radius: 2em;
+    text-decoration: none;
+    
+ }
+#log:hover,#Book:hover{
+    background-color: #c1d5f6; 
+    transform: scale(1.05);
+}
+
+#info {
+    display: flex;
+    border: 0.1em inset #a2c9ff;
+    padding:2.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 2em;
+    background-color: #e3eef9;
+    gap: 13em;
+    border-width: thick;
+}
+
+
+table {
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    
+}
+
+th, td {
+    border: 0.1em inset #3586f8;
+    padding: 1em;
+    text-align: center;
+    border-width: thick;
+    background-color: #e3eef9;
+    
+}
+
+th{
+    height: 2em;
+}
+td{
+    height: 5em;
+}
+ 
+ 
+
+body{
+    background-color: #Edf1f6;
+}
+
+table img {
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 5px;
+}
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 19, 2025, 2:04:10 AM
+    Author     : Njood
+*/
+
