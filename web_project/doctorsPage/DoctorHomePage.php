@@ -77,7 +77,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                            Patient.firstName, Patient.lastName, Patient.Gender, Patient.DoB, Patient.id AS PatientID
                     FROM Appointment 
                     JOIN Patient ON Appointment.PatientID = Patient.id 
-                    WHERE Appointment.DoctorID = '$doctor_id' AND (Appointment.status = 'pending' OR Appointment.status = 'confirmed') ";
+                    WHERE Appointment.DoctorID = '$doctor_id' AND (Appointment.status = 'Pending' OR Appointment.status = 'Confirmed') ";
 
             $appointments = mysqli_query($connection, $sql);
 
@@ -105,7 +105,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     if ($row['status'] == 'Pending') {
                         echo "<a href='confirm_appointment.php?id=" . htmlspecialchars($row['id']) . "'>Confirm</a>";
                     } elseif ($row['status'] == 'Confirmed') {
-                        echo "<a href='Prescribe.php?appointment_id=" . htmlspecialchars($row['id']) ."&pateint_id=".htmlspecialchars($row['PatientID']). "'>Prescribe</a>";
+                     echo "<a href='Prescribe.php?appointment_id=" . htmlspecialchars($row['id']) ."&patient_id=".htmlspecialchars($row['PatientID']). "'>Prescribe</a>";
                         
                     } else {
                         echo "-";
