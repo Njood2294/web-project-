@@ -35,7 +35,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         
         ?>
         
-        <a href="Homepage/HomePage.html" id="log">Log out</a> 
+        <a href="Homepage/HomePage.php" id="log">Log out</a> 
         <main id="PatientHomePage">
        
   <h2>Welcome <?php echo $doctor_info['firstName']; ?></h2>
