@@ -47,8 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $check->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: index.php");
-            exit();
+        echo "<script>alert('This email is already registered! You will be redirected to the sign up page.'); window.location.href = 'index.php';</script>";
         } else {
             // Handle image upload
             $target_dir = __DIR__ . "/uploads/";
@@ -62,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("isssiss", $id, $firstName, $lastName, $uniqueFileName, $specialityID, $email, $password);
 
             if ($stmt->execute()) {
-                $_SESSION['id'] = $id;
-                $_SESSION['type'] = 'doctor';
-                header("Location: doctor.html");
+                $_SESSION['user_id'] = $id;
+                $_SESSION['user_type'] = 'doctor';
+                header("Location: DoctorHomePage.php");
                 exit();
             } else {
                 $error_message = "Error registering doctor: " . $stmt->error;
@@ -83,17 +82,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $check->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: index.php");
-            exit();
+        echo "<script>alert('This email is already registered! You will be redirected to the sign up page.'); window.location.href = 'index.php';</script>";
         } else {
             // Insert patient data
             $stmt = $conn->prepare("INSERT INTO patient (id, firstName, lastName, Gender, DoB, emailAddress, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("issssss", $id, $firstName, $lastName, $gender, $dob, $email, $password);
 
             if ($stmt->execute()) {
-                $_SESSION['id'] = $id;
-                $_SESSION['type'] = 'patient';
-                header("Location: patient.html");
+                $_SESSION['user_id'] = $id;
+                $_SESSION['user_type'] = 'patient';
+                header("Location: PatientHomePage.php");
                 exit();
             } else {
                 $error_message = "Error registering patient: " . $stmt->error;
