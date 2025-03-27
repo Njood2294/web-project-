@@ -55,6 +55,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         ?>
     <p> Speciality: <?php echo $specialityname['speciality']; ?> </p>
     <p>Email: <?php echo $doctor_info['emailAddress']; ?></p>
+        <?php echo 
+    " Picture: <p><img src='{$doctor_info['uniqueFileName']}' alt='Doctor Image' width='50'><p>" ?>
 </div>
 </div>        
       
