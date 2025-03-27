@@ -61,7 +61,7 @@
                         <a href= #><button type="submit" class="btn">Log in</button></a>
                     </div>
                     <div class="create-account">
-                        <p>New to Hope clinec? <a href="#"><u>Create Account</u></a></p>
+                        <p>New to Hope clinec? <a href="index.php"><u>Create Account</u></a></p>
                     </div>
                 </form>
             </div>
