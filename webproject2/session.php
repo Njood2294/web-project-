@@ -15,9 +15,8 @@ if ($_SESSION['user_type'] === 'patient' && preg_match('/Doctor|Prescribe/', $cu
     header("Location: PatientHomePage.php");
     exit();
 }
- elseif ($_SESSION['user_type'] === 'doctor' && strpos($current_page, 'Patient') !== false) {
-   header("Location: DoctorHomePage.php");
-  
+ elseif ($_SESSION['user_type'] === 'doctor' && preg_match('/Patient|Appointment/', $current_page)) {
+    header("Location: DoctorHomePage.php");
     exit();
 }
 ?>
