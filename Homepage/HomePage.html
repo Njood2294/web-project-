@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Style.css">
     <title>Homepage</title>
-    
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #Edf1f6;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+h2 {
+    color: #081f5c;
+}
+
+.container1{
+    display: flex;
+    width: 85%; 
+    height: 80%;
+    box-shadow: 0px 4px 10px rgba(211, 210, 210, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-section1{
+    flex: 1;
+    background-color: #7096D1;
+    color: #081f5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+
+}
+
+.left-section1 .logo1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 150px;
+    width: auto;
+}
+
+.left-section1 .logo1 img {
+    height: 100%;
+    width: auto;
+}
+
+.left-section1 h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.left-section1 p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.right-section1 {
+    flex: 1.2;
+    background-color: rgba(132, 132, 132, 0.111); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #334eac;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.login-button:hover {
+    background-color: rgba(187, 210, 248, 0.842);
+}
+
+.signup-text {
+    font-size: 16px;
+    color: #081f5c;
+}
+
+.sign-up-link {
+    color: #081f5c;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration: underline;
+}
+    </style>
 
 
 </head>
@@ -26,7 +123,7 @@
             
             
             <p class="signup-text">New user? 
-                <a href="sign-up.html" class="sign-up-link">Sign-up</a>
+                <a href="index.php" class="sign-up-link">Sign-up</a>
             </p>
         </div>
     </div>
