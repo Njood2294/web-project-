@@ -66,6 +66,9 @@
                      $sql="SELECT * FROM Doctor WHERE SpecialityID='$spe'";
                      $result=mysqli_query($connect,$sql);
                      while($row=mysqli_fetch_assoc($result)){
+                    $sql="SELECT speciality FROM Speciality WHERE id='".$row['SpecialityID']."'";
+                    $result2=mysqli_query($connect,$sql);
+                    $row2=mysqli_fetch_assoc($result2);
                      echo "<option value='" .$row['id']. "'>" .$row['firstName']." ".$row['lastName']."-".$row2['speciality']. "</option>";
                 
                 }
