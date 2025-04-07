@@ -39,9 +39,32 @@
        
   <h2>Welcom <?php echo $patient_info['firstName']; ?></h2>
   <div id ="info">
-    <p>First name: <?php echo $patient_info['firstName']; ?></p>
-    <p>Last name: <?php echo $patient_info['lastName']; ?></p>
+   
+    
+    
+    
+    <div>
+    <p>Name: <?php echo $patient_info['firstName']; ?>  <?php echo $patient_info['lastName']; ?></p>
+    <p>Id:<?php echo $patient_info['id']; ?> </p>
+    </div>
+    <div>
+    <p>DoB:<?php echo $patient_info['DoB']; ?> </p>
     <p>Email: <?php echo $patient_info['emailAddress']; ?></p>
+</div>
+         <div>
+    <p>Gender:<?php echo $patient_info['Gender']; ?> </p>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </div>        
 <a href="Appointment.php" id="Book">Book an appointment</a>  
 

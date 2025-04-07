@@ -47,8 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $check->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: index.php");
-            exit();
+        echo "<script>alert('This email is already registered! You will be redirected to the sign up page.'); window.location.href = 'index.php';</script>";
         } else {
             // Handle image upload
             $target_dir = __DIR__ . "/uploads/";
@@ -83,8 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $check->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: index.php");
-            exit();
+        echo "<script>alert('This email is already registered! You will be redirected to the sign up page.'); window.location.href = 'index.php';</script>";
         } else {
             // Insert patient data
             $stmt = $conn->prepare("INSERT INTO patient (id, firstName, lastName, Gender, DoB, emailAddress, password) VALUES (?, ?, ?, ?, ?, ?, ?)");

@@ -34,7 +34,8 @@ if ($role === 'doctor') {
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        if ($row['password'] === $password) {
+        // Use password_verify to compare the plaintext password with the hashed password
+        if (password_verify($password, $row['password'])) {
             $_SESSION['user_id']   = $row['id'];
             $_SESSION['user_type'] = 'doctor';
             header("Location: DoctorHomePage.php");
@@ -64,7 +65,7 @@ if ($role === 'doctor') {
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        if ($row['password'] === $password) {
+        if (password_verify($password, $row['password'])) {
             $_SESSION['user_id']   = $row['id'];
             $_SESSION['user_type'] = 'patient';
             header("Location: PatientHomePage.php");
@@ -89,3 +90,4 @@ if ($role === 'doctor') {
     header("Location: login.php?error=invalidRole");
     exit();
 }
+?>
