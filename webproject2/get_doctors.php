@@ -5,7 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-$connect = mysqli_connect("localhost", "root", "root", "IT329Project");
+$connect = mysqli_connect("sql101.infinityfree.com", "if0_38801004", "100200300Ll", "if0_38801004_it329project");
+
 
 $doctors = [];
 
