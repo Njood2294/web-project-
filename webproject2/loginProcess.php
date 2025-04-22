@@ -20,8 +20,8 @@ $dbUsername = "root";
 $dbPassword = "root";  
 $dbName     = "it329project";
 
-$conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
-if (!$conn) {
+$connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
+if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
@@ -30,7 +30,7 @@ if ($role === 'doctor') {
             FROM doctor
             WHERE emailAddress='$email'
             LIMIT 1";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($connection, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -61,7 +61,7 @@ if ($role === 'doctor') {
             FROM patient
             WHERE emailAddress='$email'
             LIMIT 1";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($connection, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -76,7 +76,7 @@ if ($role === 'doctor') {
         }
     } else {
         $checkDoctor = "SELECT id FROM doctor WHERE emailAddress='$email' LIMIT 1";
-        $doctorRes = mysqli_query($conn, $checkDoctor);
+        $doctorRes = mysqli_query($connection, $checkDoctor);
         if ($doctorRes && mysqli_num_rows($doctorRes) > 0) {
             header("Location: login.php?error=wrongRole");
             exit();
