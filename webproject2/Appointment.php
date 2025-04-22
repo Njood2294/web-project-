@@ -7,7 +7,8 @@
 ?>
 <?php
 include "session.php";
-$connect = mysqli_connect("localhost", "root", "root", "IT329Project");
+$connect = mysqli_connect("sql101.infinityfree.com", "if0_38801004", "100200300Ll", "if0_38801004_it329project");
+
 $patient_id = $_SESSION['user_id'];
 
 
