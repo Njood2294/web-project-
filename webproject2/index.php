@@ -2,15 +2,16 @@
 session_start();
 
 // Database settings
-$host = "localhost";
-$user = "root";
-$pass = "root";
-$db = "it329project";
+$servername = "sql101.infinityfree.com";
+$dbUsername = "if0_38801004";
+$dbPassword = "100200300Ll";
+$dbName = "if0_38801004_it329project";
 
+$connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 // Connect to the database
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
+$connection = new mysqli($host, $user, $pass, $db);
+if ($connection->connect_error) {
+    die("Database connection failed: " . $connection->connect_error);
 }
 
 // Message variables
@@ -41,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $specialityID = $specRow['id'];
 
         // Check if email already exists
-        $check = $conn->prepare("SELECT * FROM doctor WHERE emailAddress = ?");
+        $check = $connection->prepare("SELECT * FROM doctor WHERE emailAddress = ?");
         $check->bind_param("s", $email);
         $check->execute();
         $result = $check->get_result();
@@ -57,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
             // Insert doctor data
-            $stmt = $conn->prepare("INSERT INTO doctor (id, firstName, lastName, uniqueFileName, SpecialityID, emailAddress, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $connection->prepare("INSERT INTO doctor (id, firstName, lastName, uniqueFileName, SpecialityID, emailAddress, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("isssiss", $id, $firstName, $lastName, $uniqueFileName, $specialityID, $email, $password);
 
             if ($stmt->execute()) {
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $role = 'patient';
 
         // Check if email already exists
-        $check = $conn->prepare("SELECT * FROM patient WHERE emailAddress = ?");
+        $check = $connection->prepare("SELECT * FROM patient WHERE emailAddress = ?");
         $check->bind_param("s", $email);
         $check->execute();
         $result = $check->get_result();
@@ -85,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('This email is already registered! You will be redirected to the sign up page.'); window.location.href = 'index.php';</script>";
         } else {
             // Insert patient data
-            $stmt = $conn->prepare("INSERT INTO patient (id, firstName, lastName, Gender, DoB, emailAddress, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $connection->prepare("INSERT INTO patient (id, firstName, lastName, Gender, DoB, emailAddress, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("issssss", $id, $firstName, $lastName, $gender, $dob, $email, $password);
 
             if ($stmt->execute()) {
@@ -100,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+$connection->close();
 ?>
 
 
