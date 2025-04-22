@@ -14,8 +14,8 @@ $dbUsername = "root";
 $dbPassword = "root";
 $dbName     = "it329project";
 
-$conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
-if (!$conn) {
+$connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
+if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
