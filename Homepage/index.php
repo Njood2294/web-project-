@@ -2,11 +2,12 @@
 session_start();
 
 // Database settings
-$host = "localhost";
-$user = "root";
-$pass = "root";
-$db = "it329project";
+$servername = "sql101.infinityfree.com";
+$dbUsername = "if0_38801004";
+$dbPassword = "100200300Ll";
+$dbName = "if0_38801004_it329project";
 
+$connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 // Connect to the database
 $connection = new mysqli($host, $user, $pass, $db);
 if ($connection->connect_error) {
