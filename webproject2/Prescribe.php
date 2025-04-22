@@ -21,7 +21,7 @@ if (!$connection) {
 
 // 3. Fetch the patient's info from `patient` table
 $sqlPatient = "SELECT * FROM patient WHERE id='$patient_id' LIMIT 1";
-$resultPatient = mysqli_query($conn, $sqlPatient);
+$resultPatient = mysqli_query($connection, $sqlPatient);
 
 if ($resultPatient && mysqli_num_rows($resultPatient) > 0) {
     $patientRow = mysqli_fetch_assoc($resultPatient);
@@ -45,7 +45,7 @@ if ($resultPatient && mysqli_num_rows($resultPatient) > 0) {
 
 // 4. Fetch all medications from `medication` table
 $sqlMeds = "SELECT id, MedicationName FROM medication";
-$resultMeds = mysqli_query($conn, $sqlMeds);
+$resultMeds = mysqli_query($connection, $sqlMeds);
 $medicationsList = [];
 if ($resultMeds && mysqli_num_rows($resultMeds) > 0) {
     while ($row = mysqli_fetch_assoc($resultMeds)) {
@@ -54,7 +54,7 @@ if ($resultMeds && mysqli_num_rows($resultMeds) > 0) {
 }
 
 // Close the DB connection if you want (not strictly necessary)
- mysqli_close($conn);
+ mysqli_close($connection);
 ?>
 <!DOCTYPE html>
 <html lang="en">
