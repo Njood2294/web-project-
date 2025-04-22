@@ -15,10 +15,10 @@ if (empty($email) || empty($password) || empty($role)) {
     exit();
 }
 
-$servername = "localhost";
-$dbUsername = "root";  
-$dbPassword = "root";  
-$dbName     = "it329project";
+$servername = "sql101.infinityfree.com";
+$dbUsername = "if0_38801004";
+$dbPassword = "100200300Ll";
+$dbName     = "if0_38801004_it329project";
 
 $connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 if (!$connection) {
