@@ -4,7 +4,7 @@ include "session.php";
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['appointment_id'])) {
     $appointment_id = $_POST['appointment_id'];
 
-    $connection = mysqli_connect("localhost", "root", "root", "IT329Project");
+$connection = mysqli_connect("sql101.infinityfree.com", "if0_38801004", "100200300Ll", "if0_38801004_it329project");
 
     if (!$connection) {
         echo json_encode(false);
