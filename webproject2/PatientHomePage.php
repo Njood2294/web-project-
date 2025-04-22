@@ -11,10 +11,13 @@
         ini_set('display_errors','1');
         include "session.php";
         //connection
-        $host = "localhost";
-        $username = "root"; 
-        $password = "root";      
-        $databasename = "it329project";
+        
+
+        
+        $host = "sql101.infinityfree.com";
+        $username = "if0_38801004"; 
+        $password = "100200300Ll";      
+        $databasename = "if0_38801004_it329project";
         $connection= mysqli_connect($host, $username, $password, $databasename);
 
         $error=mysqli_connect_error();
@@ -92,7 +95,7 @@ while ($row = mysqli_fetch_assoc($disAppointments)) {
     
     $time_12h = date("h:i A", strtotime($row['time']));
     $doctor_image = !empty($row['uniqueFileName']) ? "uploads/" . htmlspecialchars($row['uniqueFileName']) : "uploads/default.jpg";
-    // التحقق مما إذا كان status يساوي "Confirmed" أو "Pending"
+    //
     if ($row['status'] == "Confirmed" || $row['status'] == "Pending") {
         echo "<tr>
             <td>{$time_12h}</td>
@@ -100,7 +103,10 @@ while ($row = mysqli_fetch_assoc($disAppointments)) {
             <td>{$row['doctorFirstName']} {$row['doctorLastName']}</td>
             <td><img src='{$doctor_image}' alt='Doctor Image' width='50'></td>
             <td>{$row['status']}</td>
-            <td><a href='cancel.php?id={$row['id']}'>Cancel</a></td>
+           <td><a href='#' onclick='cancelAppointment({$row['id']}, this); return false;'>Cancel</a></td>
+
+            
+    
         </tr>";
     }
 }
@@ -111,7 +117,27 @@ while ($row = mysqli_fetch_assoc($disAppointments)) {
    </main>
     
         
-        
+     <script>
+function cancelAppointment(id, btn) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "cancel.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            if (xhr.responseText.trim() === "true") {
+                var row = btn.closest("tr");
+                row.remove();
+            }
+            
+        }
+    };
+
+    xhr.send("id=" + encodeURIComponent(id));
+}
+</script>
+
+ 
         
         
     </body>
