@@ -13,7 +13,7 @@
         ini_set('display_errors', 1);
         ini_set('log_errors', 1);
         
-        $connection = mysqli_connect("localhost", "root", "root", "IT329Project");
+        $connection = mysqli_connect("sql101.infinityfree.com", "if0_38801004", "100200300Ll", "if0_38801004_it329project");
         if ($error = mysqli_connect_error()) {
             $out = "<p>there is an error </p>" . $error;
             exit($out);
