@@ -18,25 +18,25 @@ $dbUsername = "root";
 $dbPassword = "root";
 $dbName     = "it329project";
 
-$conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
-if (!$conn) {
+$connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
+if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
 // 3. Update the appointment status to 'Done'
 $updateSql = "UPDATE appointment SET status='Done' WHERE id='$appointment_id'";
-mysqli_query($conn, $updateSql);
+mysqli_query($connection, $updateSql);
 
 // 4. Insert a new row in `prescription` for each medication selected
 foreach ($selectedMeds as $medID) {
     // $medID is one of the IDs from the `medication` table
     $insertSql = "INSERT INTO prescription (AppointmentID, MedicationID)
                   VALUES ('$appointment_id', '$medID')";
-    mysqli_query($conn, $insertSql);
+    mysqli_query($connection, $insertSql);
 }
 
 // 5. (Optional) Close the connection
-mysqli_close($conn);
+mysqli_close($connection);
 
 // 6. Redirect back to doctor's homepage
 header("Location: DoctorHomePage.php");
