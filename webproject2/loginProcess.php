@@ -46,7 +46,7 @@ if ($role === 'doctor') {
         }
     } else {
         $checkPatient = "SELECT id FROM patient WHERE emailAddress='$email' LIMIT 1";
-        $patientRes = mysqli_query($conn, $checkPatient);
+        $patientRes = mysqli_query($connection, $checkPatient);
         if ($patientRes && mysqli_num_rows($patientRes) > 0) {
             header("Location: login.php?error=wrongRole");
             exit();
