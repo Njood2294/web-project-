@@ -9,9 +9,8 @@ $dbName = "if0_38801004_it329project";
 
 $connection = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 // Connect to the database
-$connection = new mysqli($host, $user, $pass, $db);
-if ($connection->connect_error) {
-    die("Database connection failed: " . $connection->connect_error);
+if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 // Message variables
